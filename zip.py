@@ -31,14 +31,14 @@ def start():
                 with open(f'{path}/{item2}', 'r') as f:
                     out[f'{path2}/{item2}'] = {
                         'name': f'{path2}/{item2}',
-                        'type': '1',
+                        'type': '0',
                         'content': f.read()
                     }
             except UnicodeError:
                 with open(f'{path}/{item2}', 'rb') as f:
                     out[f'{path2}/{item2}'] = {
                         'name': f'{path2}/{item2}',
-                        'type': '0',
+                        'type': '1',
                         'content': f.read()  # base64.b64encode(f.read()).decode()
                     }
 
