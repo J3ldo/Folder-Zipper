@@ -31,14 +31,14 @@ def start():
                 with open(f'{path}/{item2}', 'r') as f:
                     out[f'{path2}/{item2}'] = {
                         'name': f'{path2}/{item2}',
-                        'type': 'file',
+                        'type': '1',
                         'content': f.read()
                     }
             except UnicodeError:
                 with open(f'{path}/{item2}', 'rb') as f:
                     out[f'{path2}/{item2}'] = {
                         'name': f'{path2}/{item2}',
-                        'type': 'bytes',
+                        'type': '0',
                         'content': f.read()  # base64.b64encode(f.read()).decode()
                     }
 
@@ -77,7 +77,7 @@ def start():
 
     '''with open('out.json', 'w') as f:
         json.dump(out, f, indent=4)'''
-    with open('out.zipt', 'wb') as f:
+    with open('out.json', 'wb') as f:
         pickle.dump(out, f, protocol=pickle.HIGHEST_PROTOCOL)
 
     print(f'Succesfully zipped the directory in {round(time.perf_counter() - startt, 2)} seconds.')
