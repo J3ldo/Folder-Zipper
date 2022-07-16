@@ -45,7 +45,7 @@ def start():
         if out[item]['type'] == 'dir':
             continue
 
-        elif out[item]['type'] == 'bytes':
+        elif out[item]['type'] == '1':
             try:
                 with open(f"{file[:-5]}/{out[item]['name']}", 'wb') as f:
                     f.write(
